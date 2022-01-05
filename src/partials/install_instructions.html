@@ -1,0 +1,136 @@
+<div class="mt-8 md:mt-14 w-full max-w-[600px] flex flex-col items-center">
+  <div role="tablist" class="tabs w-full justify-between" data-el="tabs">
+    <a
+      id="link-install-flyio"
+      class="tab active"
+      href="#"
+      role="tab"
+      aria-controls="install-flyio"
+      aria-selected="true"
+      data-tab-target="#install-flyio"
+    >
+      Using Fly.io
+    </a>
+    <a
+      id="link-install-docker"
+      class="tab"
+      href="#"
+      role="tab"
+      aria-controls="install-docker"
+      data-tab-target="#install-docker"
+      >Using Docker</a
+    >
+    <a
+      id="link-install-elixir"
+      class="tab"
+      href="#"
+      role="tab"
+      aria-controls="install-elixir"
+      data-tab-target="#install-elixir"
+      >Using Elixir</a
+    >
+  </div>
+  <div class="mt-4 w-full p-4 rounded-2xl bg-white">
+    <img src="/images/window_buttons.png" alt="" width="36" height="8" />
+    <!-- Tab contents -->
+
+    <!-- * Fly.io instructions -->
+    <div
+      id="install-flyio"
+      role="tabpanel"
+      aria-labelledby="link-install-flyio"
+      data-el="tab-content"
+      data-tab-active
+      class="my-12 flex flex-col items-center justify-center"
+    >
+      <a
+        class="
+          px-5
+          py-3
+          flex
+          space-x-3
+          items-center
+          rounded-xl
+          bg-[#8b5cf6]
+          hover:bg-[#7c3aed]
+          text-white
+        "
+        href="https://fly.io/launch/livebook"
+      >
+        <img src="/images/flyio_logo_white.svg" alt="" width="32" height="27" />
+        <span class="font-semibold -mb-0.5">Launch on Fly</span>
+      </a>
+    </div>
+
+    <!-- * Docker instructions -->
+    <div
+      id="install-docker"
+      role="tabpanel"
+      aria-labelledby="link-install-docker"
+      data-el="tab-content"
+      class="mt-6 flex flex-col space-y-6"
+    >
+      <!-- Step -->
+      <div class="flex flex-col items-start space-y-2">
+        <div class="text-gray-900 text-sm font-semibold">Step 1</div>
+        <div>
+          <a
+            class="button button-gray"
+            href="https://docs.docker.com/get-docker/"
+          >
+            <img src="/images/docker.svg" alt="" width="28" height="21" />
+            <span class="text-sm font-medium">Install Docker</span>
+          </a>
+        </div>
+      </div>
+      <!-- Step -->
+      <div class="flex flex-col space-y-2">
+        <div class="text-gray-900 text-sm font-semibold">Step 2</div>
+        <!-- prettier-ignore -->
+        {{> code
+              id="docker-run-livebook"
+              code="docker run -p 8080:8080 --pull always livebook/livebook"
+              isShell=true
+            }}
+      </div>
+    </div>
+
+    <!-- * Elixir instructions -->
+    <div
+      id="install-elixir"
+      role="tabpanel"
+      aria-labelledby="link-install-elixir"
+      data-el="tab-content"
+      class="mt-6 flex flex-col space-y-6"
+    >
+      <!-- Step -->
+      <div class="flex flex-col items-start space-y-2">
+        <div class="text-gray-900 text-sm font-semibold">Step 1</div>
+        <div>
+          <a
+            class="button button-gray"
+            href="https://elixir-lang.org/install.html"
+          >
+            <img src="/images/elixir.svg" alt="" width="12" height="21" />
+            <span class="text-sm font-medium">Install Elixir v1.13+</span>
+          </a>
+        </div>
+      </div>
+      <!-- Step -->
+      <div class="flex flex-col space-y-2">
+        <div class="text-gray-900 text-sm font-semibold">Step 2</div>
+        <!-- prettier-ignore -->
+        {{> code
+              id="elixir-install-livebook"
+              code="mix escript.install hex livebook"
+              isShell=true
+            }}
+            {{> code
+              id="elixir-run-livebook"
+              code="livebook server"
+              isShell=true
+            }}
+      </div>
+    </div>
+  </div>
+</div>

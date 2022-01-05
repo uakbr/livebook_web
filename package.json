@@ -1,0 +1,19 @@
+{
+  "name": "livebook_website",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "format": "prettier --trailing-comma es5 --write 'src/**/*.{js,css,html}' '!src/dist/**/*'"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.6",
+    "postcss": "^8.3.8",
+    "prettier": "^2.4.1",
+    "tailwindcss": "^2.2.16",
+    "vite": "^2.6.0",
+    "vite-plugin-handlebars": "^1.6.0"
+  }
+}
