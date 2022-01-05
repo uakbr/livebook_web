@@ -1,6 +1,6 @@
 # Livebook website
 
-The landing page for [Livebook](https://github.com/umair-akb/livebook).
+The landing page for [Livebook]
 
 ## Development
 
